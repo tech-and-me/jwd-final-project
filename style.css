@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+button a:hover {
+    color: white;
+}
+
 .last-row p{
     font-size: 0.8rem;
 }
