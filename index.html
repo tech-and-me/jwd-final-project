@@ -16,7 +16,7 @@
     <div class="container">
         <!-- start of the row -->
         <div class="row text-center p-3">
-            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-target="#pop-up-form" style="width:10%; display: inline-block;">Add Task</button>
+            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-target="#pop-up-form" style="width:10%;"><a href="pop-up.html" target='_blank'>Add Task</a></button>
             <h1>Task Planner</h1>
         </div>
         <!-- end of the row -->
@@ -135,9 +135,9 @@
       </div>
     
     <!-- start of the pop-up form -->
-    <form class="row g-3 position-absolute bottom-0 end-0" id="pop-up-form" style="display: block;">
-            <h2>Task Form</h2>
-            <hr>
+    <form class="row g-3 position-absolute top-50 start-50 translate-middle" id="pop-up-form" style="display: none;">
+        <h2>Task Form</h2>
+        <hr>
         <div class="row">
             <div class="col-md-6">
                 <label for="taskName" class="form-label">Task Name</label>
@@ -176,11 +176,9 @@
         <div class="col-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg shadow rounded">Save</button>
         </div>
-      </form>
+    </form>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-    
   </body>
 </html>
