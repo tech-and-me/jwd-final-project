@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.last-row p{
+    font-size: 0.8rem;
+}
+
+#edit {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* form elements */
+
+form {
+    width:70%;
+    padding: 2em;
+    background-color: rgba(179, 236, 240, 0.85);
+    border: 1px solid rgba(146, 146, 146, 0.9);
+    border-radius: 20px;
+}
+
+form hr {
+    margin-bottom: 1.5em;
+    border-top: 2px solid #8c8b8b;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* media query */
+
+@media (max-width:767px) {
+    form textarea {
+        margin-bottom: 1.5em;
+    }
+}
