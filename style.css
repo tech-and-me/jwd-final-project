@@ -24,7 +24,7 @@ button a:hover {
 
 /* form elements */
 
-form {
+/* form {
     width:50%;
     padding: 2em;
     background-color: rgba(179, 236, 240, 0.9);
@@ -35,7 +35,9 @@ form {
 form hr {
     margin-bottom: 1.5em;
     border-top: 2px solid #8c8b8b;
-}
+} */
+
+
 
 label {
     font-size: 1rem;
