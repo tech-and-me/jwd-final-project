@@ -16,9 +16,7 @@
     <div class="container">
         <!-- start of the row -->
         <div class="row text-center p-3">
-
-            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-bs-toggle="modal" data-target="#pop-up-form" style="width:10%; display: inline-block;"><a href="pop-up.html" target='_blank'>Add Task</a></button>
-
+            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-bs-toggle="modal" data-bs-target="#pop-up-form" style="width:10%; display: inline-block;">Add Task</button>
             <h1>Task Planner</h1>
         </div>
         <!-- end of the row -->
@@ -133,13 +131,155 @@
               <!-- end of the card -->
           </div>
           <!-- end of the 3rd card -->
+          <!-- start of 4th card  -->
+          <div class="col-12 col-md-6 col-lg-4 gy-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5 class="card-title">Task Name</h5>
+                            <hr>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="col-3">
+                            <h1 class="float-right">24</h1>
+                            <h3>Sep</h3>
+                        </div>
+                    </div>
+                  <hr>
+                  <div class="row last-row gx-1">
+                    <div class="col">
+                        <p id="assignedTo">Assigned to<br />Name</p>
+                    </div>
+                    <div class="col">
+                        <p>Status<br />Done</p>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-primary btn-sm" id="edit">Edit</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of the card -->
+          </div>
+          <!-- end of the 4th card -->
+          <!-- start of 5th card  -->
+          <div class="col-12 col-md-6 col-lg-4 gy-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5 class="card-title">Task Name</h5>
+                            <hr>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="col-3">
+                            <h1 class="float-right">24</h1>
+                            <h3>Sep</h3>
+                        </div>
+                    </div>
+                  <hr>
+                  <div class="row last-row gx-1">
+                    <div class="col">
+                        <p id="assignedTo">Assigned to<br />Name</p>
+                    </div>
+                    <div class="col">
+                        <p>Status<br />Done</p>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-primary btn-sm" id="edit">Edit</a>
+                    </div>
+                    <div class="col">
+                        <a href="#" class="btn btn-primary btn-sm">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of the card -->
+          </div>
+          <!-- end of the 5th card -->
+
         </div>
         <!-- end of the card row -->
       </div>
     
-    <!-- start of the pop-up form -->
+    <!-- Bootstrap pop-up modal  -->
+    
 
-    <form class="row g-3 position-absolute top-50 start-50 translate-middle" id="pop-up-form" style="display: none;">
+    <div class="modal fade" id="pop-up-form" tabindex="-1" aria-labelledby="pop-up-form-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="pop-up-form-label">Task Form</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- <form class="row g-3 position-absolute top-50 start-50 translate-middle"> -->
+              <!-- <h2>Task Form</h2> -->
+              <!-- <hr> -->
+      
+              <div class="row">
+                  <div class="col-12 col-lg-8">
+                      <label for="taskName" class="form-label">Task Name</label>
+                      <input type="text" class="form-control" id="taskName">
+                  </div>
+              </div>
+              <br />
+              <div class="row">
+                  <div class="col-12 col-lg-8">
+                      <label for="description" class="form-label">Description</label>
+                      <textarea id="description" name="description" class="form-control" placeholder="Description" rows="10" cols="50"></textarea>
+                    </div>
+                  <div class="col-12 col-lg-4">
+                      <label for="assignTo" class="form-label">Assign to</label>
+                      <input type="text" class="form-control" id="assignTo" placeholder="Assign name">
+                      <br />
+                      <label for="status" class="form-label">Status</label>
+                      <div class="dropdown">
+                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Status
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">To Do</a></li>
+                            <li><a class="dropdown-item" href="#">In Progress</a></li>
+                            <li><a class="dropdown-item" href="#">Review</a></li>
+                            <li><a class="dropdown-item" href="#">Done</a></li>
+                          </ul>
+                        </div>
+                      <br />
+                      <label for="dueDate" class="form-label">Due Date</label>
+                      <input type="date" class="form-control" id="dueDate">
+                  </div>
+              </div>
+              <br />
+              <hr>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary btn-lg shadow rounded">Save</button>
+              </div>
+          <!-- </form> -->
+          
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+    <!-- end of Bootstrap pop-up modal   -->
+    
+    
+    
+      <!-- start of the pop-up form -->
+
+      <!-- <form class="row g-3 position-absolute top-50 start-50 translate-middle" id="pop-up-form" style="display: none;">
         <h2>Task Form</h2>
         <hr>
 
@@ -181,8 +321,23 @@
         <div class="col-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg shadow rounded">Save</button>
         </div>
-    </form>
+    </form> -->
 
+
+
+
+
+    <script>
+      var myModal = document.getElementById('myModal')
+var myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+
+    </script>
+
+    
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   </body>
