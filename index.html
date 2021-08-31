@@ -207,7 +207,6 @@
       </div>
     
     <!-- Bootstrap pop-up modal  -->
-    
 
     <div class="modal fade" id="pop-up-form" tabindex="-1" aria-labelledby="pop-up-form-label" aria-hidden="true">
       <div class="modal-dialog">
@@ -217,10 +216,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <!-- <form class="row g-3 position-absolute top-50 start-50 translate-middle"> -->
-              <!-- <h2>Task Form</h2> -->
-              <!-- <hr> -->
-            <form action="GET">
+            <form action="">
               <div class="row">
                   <div class="col-12 col-lg-8">
                       <label for="taskName" class="form-label">Task Name</label>
@@ -238,17 +234,19 @@
                       <input type="text" class="form-control" id="assignTo" placeholder="Assign name">
                       <br />
                       <label for="status" class="form-label">Status</label>
-                      <div class="dropdown">
-                          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            Status
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="#">To Do</a></li>
-                            <li><a class="dropdown-item" href="#">In Progress</a></li>
-                            <li><a class="dropdown-item" href="#">Review</a></li>
-                            <li><a class="dropdown-item" href="#">Done</a></li>
-                          </ul>
-                        </div>
+                      
+                      <!----------------- start of select   ---------------------->
+
+                      <select id="status" class="form-select" aria-label="Default select example">
+                        <option selected>Choose status</option>
+                        <option value="todo">To Do</option>
+                        <option value="inprogress">In Progress</option>
+                        <option value="review">Review</option>
+                        <option value="done">Done</option>
+                      </select>
+
+                      <!-------------------- End of Select ----------------------- -->
+
                       <br />
                       <label for="dueDate" class="form-label">Due Date</label>
                       <input type="date" class="form-control" id="dueDate">
@@ -263,71 +261,13 @@
          
           
           </div>
-          <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
+          
         </div>
       </div>
     </div>
     
-    
-    
-    
     <!-- end of Bootstrap pop-up modal   -->
-    
-    
-    
-      <!-- start of the pop-up form -->
-
-      <!-- <form class="row g-3 position-absolute top-50 start-50 translate-middle" id="pop-up-form" style="display: none;">
-        <h2>Task Form</h2>
-        <hr>
-
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <label for="taskName" class="form-label">Task Name</label>
-                <input type="text" class="form-control" id="taskName">
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <label for="description" class="form-label">Description</label>
-                <textarea id="description" name="description" class="form-control" placeholder="Description" rows="10" cols="50"></textarea>
-              </div>
-            <div class="col-12 col-lg-4">
-                <label for="assignTo" class="form-label">Assign to</label>
-                <input type="text" class="form-control" id="assignTo" placeholder="Assign name">
-                <br />
-                <label for="status" class="form-label">Status</label>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Status
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">To Do</a></li>
-                      <li><a class="dropdown-item" href="#">In Progress</a></li>
-                      <li><a class="dropdown-item" href="#">Review</a></li>
-                      <li><a class="dropdown-item" href="#">Done</a></li>
-                    </ul>
-                  </div>
-                <br />
-                <label for="dueDate" class="form-label">Due Date</label>
-                <input type="date" class="form-control" id="dueDate">
-            </div>
-        </div>
-        <br />
-        <hr>
-        <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary btn-lg shadow rounded">Save</button>
-        </div>
-    </form> -->
-
-
-
-
-
+   
     <script>
       var myModal = document.getElementById('myModal')
 var myInput = document.getElementById('myInput')
