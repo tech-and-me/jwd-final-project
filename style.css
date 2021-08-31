@@ -26,12 +26,11 @@ button a:hover {
 
 form {
     width:50%;
-    height: auto;
     padding: 2em;
     background-color: rgba(179, 236, 240, 0.9);
     border: 1px solid rgba(146, 146, 146, 0.9);
     border-radius: 20px;
-}
+    }
 
 form hr {
     margin-bottom: 1.5em;
@@ -48,5 +47,13 @@ label {
 @media (max-width:767px) {
     form textarea {
         margin-bottom: 1.5em;
+    }
+
+}
+
+
+@media (min-width: 971px) and (max-width: 1195px) {
+    #assignedTo{
+        font-size: 0.7rem;
     }
 }

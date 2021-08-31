@@ -16,40 +16,42 @@
     <div class="container">
         <!-- start of the row -->
         <div class="row text-center p-3">
-            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-target="#pop-up-form" style="width:10%;"><a href="pop-up.html" target='_blank'>Add Task</a></button>
+
+            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-bs-toggle="modal" data-target="#pop-up-form" style="width:10%; display: inline-block;"><a href="pop-up.html" target='_blank'>Add Task</a></button>
+
             <h1>Task Planner</h1>
         </div>
         <!-- end of the row -->
 
         <!-- start of the card row -->
-        <div class="row row-cols-3">
+        <div class="row">
         <!-- start of the 1st card -->
-          <div class="col">
+        <div class="col-12 col-md-6 col-lg-4 gy-5">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-9">
                             <h5 class="card-title">Task Name</h5>
                             <hr>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
-                        <div class="col">
+                        <div class="col-3">
                             <h1 class="float-right">24</h1>
-                            <h3>September</h3>
+                            <h3>Sep</h3>
                         </div>
                     </div>
                   <hr>
-                  <div class="row row-cols-4 last-row">
-                    <div class="col">
-                        <p>Assigned to<br />Name</p>
+                  <div class="row last-row gx-1">
+                    <div class="col-3">
+                      <p id="assignedTo">Assigned to<br />Name</p>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <p>Status<br />Done</p>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <a href="#" class="btn btn-primary btn-sm" id="edit">Edit</a>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <a href="#" class="btn btn-primary btn-sm">Delete</a>
                     </div>
                   </div>
@@ -60,32 +62,33 @@
           <!-- end of the 1st card -->
 
           <!-- start of the 2nd card -->
-          <div class="col">
+          <div class="col-12 col-md-6 col-lg-4 gy-5">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-9">
                             <h5 class="card-title">Task Name</h5>
                             <hr>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Some quick example text to build on the 
+                              card title and make up the bulk of the card's content.</p>
                         </div>
-                        <div class="col">
+                        <div class="col-3">
                             <h1 class="float-right">24</h1>
-                            <h3>September</h3>
+                            <h3>Sep</h3>
                         </div>
                     </div>
                   <hr>
-                  <div class="row row-cols-4 last-row">
-                    <div class="col">
-                        <p>Assigned to<br />Name</p>
+                  <div class="row last-row gx-1">
+                    <div class="col-3">
+                      <p id="assignedTo">Assigned to<br />Name</p>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <p>Status<br />Done</p>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <a href="#" class="btn btn-primary btn-sm" id="edit">Edit</a>
                     </div>
-                    <div class="col">
+                    <div class="col-3">
                         <a href="#" class="btn btn-primary btn-sm">Delete</a>
                     </div>
                   </div>
@@ -96,24 +99,24 @@
           <!-- end of the 2nd card -->
 
           <!-- start of the 3rd card -->
-          <div class="col">
+          <div class="col-12 col-md-6 col-lg-4 gy-5">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-9">
                             <h5 class="card-title">Task Name</h5>
                             <hr>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
-                        <div class="col">
+                        <div class="col-3">
                             <h1 class="float-right">24</h1>
-                            <h3>September</h3>
+                            <h3>Sep</h3>
                         </div>
                     </div>
                   <hr>
-                  <div class="row row-cols-4 last-row">
+                  <div class="row last-row gx-1">
                     <div class="col">
-                        <p>Assigned to<br />Name</p>
+                        <p id="assignedTo">Assigned to<br />Name</p>
                     </div>
                     <div class="col">
                         <p>Status<br />Done</p>
@@ -135,22 +138,24 @@
       </div>
     
     <!-- start of the pop-up form -->
+
     <form class="row g-3 position-absolute top-50 start-50 translate-middle" id="pop-up-form" style="display: none;">
         <h2>Task Form</h2>
         <hr>
+
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-lg-8">
                 <label for="taskName" class="form-label">Task Name</label>
                 <input type="text" class="form-control" id="taskName">
             </div>
         </div>
         <br />
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-lg-8">
                 <label for="description" class="form-label">Description</label>
                 <textarea id="description" name="description" class="form-control" placeholder="Description" rows="10" cols="50"></textarea>
               </div>
-            <div class="col-md-6">
+            <div class="col-12 col-lg-4">
                 <label for="assignTo" class="form-label">Assign to</label>
                 <input type="text" class="form-control" id="assignTo" placeholder="Assign name">
                 <br />
