@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgba(170, 221, 238, 0.5);
+}
+
+.modal-content {
+    background-color: rgba(170, 221, 238, 0.9);
+}
+
+.container {
+    padding-top: 1em;
+    padding-bottom: 3em;
+}
+
 button a {
     color: white;
     text-decoration: none;
@@ -15,6 +28,7 @@ button a:hover {
 
 .last-row p{
     font-size: 0.8rem;
+    color: blue;
 }
 
 #edit {
@@ -37,7 +51,24 @@ form hr {
     border-top: 2px solid #8c8b8b;
 } */
 
+.g-5, .gy-5 {
+    --bs-gutter-y: 1.5rem;
+}
 
+.card-title {
+    font-size: 1.25rem;
+}
+
+.card-body h2 {
+    font-size: 2.5rem;
+    color:orangered;
+    margin-bottom: 0px;
+}
+
+.card-body span {
+    font-size: 1.75rem;
+    color:orangered;
+}
 
 label {
     font-size: 1rem;
