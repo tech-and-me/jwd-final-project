@@ -47,7 +47,7 @@ let dueDate = document.querySelector("#dueDate");
     }
     
     // // validate Due Date field
-    if(dueDate.value===""){
+    if(dueDate.value==""){
         dueDate.classList.remove('is-valid');
         dueDate.classList.add('is-invalid');}
     else{
