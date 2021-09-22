@@ -2,21 +2,20 @@ const taskName = document.querySelector("#taskName");
 const description = document.querySelector("#description");
 const assignTo = document.querySelector("#assignTo");
 const dueDate = document.querySelector("#dueDate");
-const select = document.getElementById("status");
-var valueStatus = select.options[select.selectedIndex].value;
+const select = document.querySelector("#status");
+
 // const valueStatus = document.querySelector('#status');
 const save = document.querySelector("#save");
 
-console.log(`here is the due date: ${dueDate.value}` );
-console.log(`here is the value status: ${valueStatus.value}` );
-
-
 function validFormFieldInput(event){
+    var valueStatus = select.options[select.selectedIndex].value;
+    console.log(`here is the due date: ${dueDate.value}` );
+    console.log(`here is the value status: ${valueStatus}` );
 
 //validate Task Name field
     event.preventDefault();
     // event.stopPropagation();
-
+    console.log(`here is the value status: ${valueStatus}` );
     if(taskName.value.length<=5){
         taskName.classList.remove('is-valid');
         taskName.classList.add('is-invalid');}
@@ -42,20 +41,10 @@ function validFormFieldInput(event){
         assignTo.classList.add('is-valid');
         assignTo.classList.remove('is-invalid');
     }
-    
 
-    // // validate status field
-    if(valueStatus===""){
-        select.classList.remove('is-valid');
-        select.classList.add('is-invalid');}
-    else{
-        select.classList.add('is-valid');
-        select.classList.remove('is-invalid');
-    }
-    
-    
-
+   
     // validate Due Date field
+    
     if(dueDate.value===""){
 
         dueDate.classList.remove('is-valid');
@@ -68,12 +57,12 @@ function validFormFieldInput(event){
     // validate status field
     if(valueStatus===""){
         console.log('Status is not selected yet');
-        valueStatus.classList.remove('is-valid');
-        valueStatus.classList.add('is-invalid');}
+        select.classList.remove('is-valid');
+        select.classList.add('is-invalid');}
     else{
         console.log('Status is selected yet');
-        valueStatus.classList.add('is-valid');
-        valueStatus.classList.remove('is-invalid');
+        select.classList.add('is-valid');
+        select.classList.remove('is-invalid');
     }
     
 }
