@@ -39,11 +39,11 @@ let dueDate = document.querySelector("#dueDate");
     
     // // validate status field
     if(valueStatus===""){
-        valueStatus.classList.remove('is-valid');
-        valueStatus.classList.add('is-invalid');}
+        select.classList.remove('is-valid');
+        select.classList.add('is-invalid');}
     else{
-        valueStatus.classList.add('is-valid');
-        valueStatus.classList.remove('is-invalid');
+        select.classList.add('is-valid');
+        select.classList.remove('is-invalid');
     }
     
     // // validate Due Date field
