@@ -71,7 +71,8 @@ function validFormFieldInput(event){
 save.addEventListener("click",validFormFieldInput);
 
 
-
+newTask = new taskManager("Hi");
+console.log(newTask);
 
 
 
