@@ -43,8 +43,21 @@ function validFormFieldInput(event){
         assignTo.classList.remove('is-invalid');
     }
     
+
+    // // validate status field
+    if(valueStatus===""){
+        select.classList.remove('is-valid');
+        select.classList.add('is-invalid');}
+    else{
+        select.classList.add('is-valid');
+        select.classList.remove('is-invalid');
+    }
+    
+    
+
     // validate Due Date field
     if(dueDate.value===""){
+
         dueDate.classList.remove('is-valid');
         dueDate.classList.add('is-invalid');}
     else{
