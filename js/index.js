@@ -116,6 +116,7 @@ function validFormFieldInput(event){
 
         //Clear all fields after saving those data
         clearTaskForm();  
+        taskManager.render();
 
     }
     else{
@@ -137,9 +138,6 @@ save.addEventListener("click",validFormFieldInput);
 // add event to clear all field once the closeX button is clicked.
 closeX.addEventListener("click",clearTaskForm);
 
-
-
-
 // testing addTask method on the new taskManager
 //taskManager.addTask("Car Services","Bring car to Granville Garage for Servicing","Kash","24/09/21","To Do");
 // console.log(taskManager.tasks);
@@ -149,7 +147,9 @@ closeX.addEventListener("click",clearTaskForm);
 // console.log(taskManager.tasks[0].status);
 // console.log(taskManager.tasks[0].dueDate);
 
-
+// task 7, step1.4
+//let taskHtml = createTaskHtml("Hello","Hello56667778","kashie","03/10/2021","In Progress");
+//console.log(taskHtml);
 
 
 
