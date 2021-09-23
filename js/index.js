@@ -1,19 +1,42 @@
 //innitialize the new task manager
 const taskManager = new TaskManager();
 
+//select all fields of the add task form
+let taskName = document.querySelector("#taskName");
+let description = document.querySelector("#description");
+let assignedTo = document.querySelector("#assignTo");
+let dueDate = document.querySelector("#dueDate");
+let select = document.querySelector("#status");
+let save = document.querySelector("#save");
+let closeX = document.querySelector(".btn-close");
+
+// Create function to clear the task form when Save or X is clicked
+function clearTaskForm(){
+    taskName.value = "";
+        description.value = "";
+        assignedTo.value ="";
+        dueDate.value="";
+        select.value="";
+        taskName.classList.remove("is-valid");
+        description.classList.remove("is-valid");
+        assignedTo.classList.remove("is-valid");
+        select.classList.remove("is-valid");
+        dueDate.classList.remove("is-valid");
+        taskName.classList.remove("is-invalid");
+        description.classList.remove("is-invalid");
+        assignedTo.classList.remove("is-invalid");
+        select.classList.remove("is-invalid");
+        dueDate.classList.remove("is-invalid");
+}
+
+
+
 
 
 //create function to valid all input of the add Task form
 function validFormFieldInput(event){
     //creating a variable to count the valid field
     let numValidFields = 0;
-    //select all fields of the add task form
-    let taskName = document.querySelector("#taskName");
-    let description = document.querySelector("#description");
-    let assignTo = document.querySelector("#assignTo");
-    let dueDate = document.querySelector("#dueDate");
-    let select = document.querySelector("#status");
-    let save = document.querySelector("#save");
     //accessing value of the selected option of Status selection
     var valueStatus = select.options[select.selectedIndex].value;
 
@@ -50,12 +73,12 @@ function validFormFieldInput(event){
     }
 
     // validate assigned to field
-    if(assignTo.value.trim().length<=3){
-        assignTo.classList.remove('is-valid');
-        assignTo.classList.add('is-invalid');}
+    if(assignedTo.value.trim().length<=3){
+        assignedTo.classList.remove('is-valid');
+        assignedTo.classList.add('is-invalid');}
     else{
-        assignTo.classList.add('is-valid');
-        assignTo.classList.remove('is-invalid');
+        assignedTo.classList.add('is-valid');
+        assignedTo.classList.remove('is-invalid');
         numValidFields++;
     }
     // validate Due Date field
@@ -83,7 +106,7 @@ function validFormFieldInput(event){
         taskManager.addTask(
             taskName.value,
             description.value,
-            assignTo.value,
+            assignedTo.value,
             dueDate.value,
             valueStatus
         );
@@ -92,21 +115,7 @@ function validFormFieldInput(event){
         console.log(taskManager.tasks);
 
         //Clear all fields after saving those data
-        taskName.value = "";
-        description.value = "";
-        assignTo.value ="";
-        dueDate.value="";
-        select.value="";
-        taskName.classList.remove("is-valid");
-        description.classList.remove("is-valid");
-        assignTo.classList.remove("is-valid");
-        select.classList.remove("is-valid");
-        dueDate.classList.remove("is-valid");
-        taskName.classList.remove("is-invalid");
-        description.classList.remove("is-invalid");
-        assignTo.classList.remove("is-invalid");
-        select.classList.remove("is-invalid");
-        dueDate.classList.remove("is-invalid");
+        clearTaskForm();  
 
     }
     else{
@@ -124,6 +133,9 @@ function validFormFieldInput(event){
 
 // add event to save button to validate and collect data from the add task form
 save.addEventListener("click",validFormFieldInput);
+
+// add event to clear all field once the closeX button is clicked.
+closeX.addEventListener("click",clearTaskForm);
 
 
 
