@@ -45,7 +45,7 @@ function validFormFieldInput(event){
     // event.stopPropagation();
 
     //validate Task Name field
-    if(taskName.value.trim().length<=5){
+    if(taskName.value.trim().length<5){
         taskName.classList.remove('is-valid');
         taskName.classList.add('is-invalid');}
     else{
@@ -55,7 +55,7 @@ function validFormFieldInput(event){
     }
 
     // validate description field
-    if(description.value.trim().length<=5){
+    if(description.value.trim().length<10){
         description.classList.remove('is-valid');
         description.classList.add('is-invalid');}
     else{
@@ -65,7 +65,7 @@ function validFormFieldInput(event){
     }
 
     // validate assigned to field
-    if(assignedTo.value.trim().length<=3){
+    if(assignedTo.value.trim().length<2){
         assignedTo.classList.remove('is-valid');
         assignedTo.classList.add('is-invalid');}
     else{
