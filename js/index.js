@@ -12,7 +12,7 @@ let closeX = document.querySelector(".btn-close");
 
 // Create function to clear the task form when Save or X is clicked
 function clearTaskForm(){
-    taskName.value = "";
+        taskName.value = "";
         description.value = "";
         assignedTo.value ="";
         dueDate.value="";
@@ -55,7 +55,7 @@ function validFormFieldInput(event){
     }
 
     // validate description field
-    if(description.value.trim().length<10 || description.value.trim().length>50 ){
+    if(description.value.trim().length<5 || description.value.trim().length>50 ){
         description.classList.remove('is-valid');
         description.classList.add('is-invalid');}
     else{
@@ -139,6 +139,32 @@ if (month <10){
 minDate = year + "-" + month + "-" + day;
 console.log(minDate);
 document.querySelector("#dueDate").setAttribute('min',minDate);
+
+let cardLayout = document.querySelector("#cardLayout")
+console.log("-------card layout selected by class");
+console.log(cardLayout);
+cardLayout.addEventListener("click",(event) =>{
+    if (event.target.classList.contains("btn-done")){
+        // Updating the selected task status
+        const searchingMainDiv = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; 
+        event.target.style.visibility = "hidden";
+        console.log(event.target.tagName);
+        // console.log("above is event.target.tagName");
+        
+        console.log(searchingMainDiv);
+        var searchingMainDivId = Number(searchingMainDiv.id);
+        let searchingTask;
+        searchingTask=taskManager.getTaskById(searchingMainDivId);
+        searchingTask.status = "done";
+        taskManager.render();
+        taskManager.setColor(); 
+      
+        
+    }
+});
+
+
+
 
 
 
