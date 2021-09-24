@@ -20,7 +20,7 @@
     <div class="container">
         <!-- start of the row -->
         <header class="row text-center p-3">
-            <button type="button" class="btn btn-primary position-absolute top-30 start-10" data-bs-toggle="modal" data-bs-target="#pop-up-form" style="width:10%; display: inline-block;">Add Task</button>
+            <button type="button" id="addTask" class="btn btn-primary position-absolute top-30 start-10 shadow rounded" data-bs-toggle="modal" data-bs-target="#pop-up-form" style="width:10%; display: inline-block;">Add Task</button>
             <h1>Task Planner</h1>
         </header>
         <!-- end of the row -->
@@ -270,7 +270,7 @@
                       <br />
                       <section>
                         <label for="dueDate" class="form-label">Due Date</label>
-                        <input type="date" class="form-control" id="dueDate">
+                        <input type="date" class="form-control" id="dueDate" min="">
                         <div class="valid-feedback"></div>
                         <div class="invalid-feedback">Please select a date.</div>
                       </section>

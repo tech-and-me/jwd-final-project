@@ -40,17 +40,9 @@ function validFormFieldInput(event){
     //accessing value of the selected option of Status selection
     var valueStatus = select.options[select.selectedIndex].value;
 
-    //testing printing out value of dueDate field and status field
-    //console.log(`here is the due date: ${dueDate.value}` );
-    //console.log(`here is the value status: ${valueStatus}` );
-
     //stopping the form from submitting when submit button is clicked
     event.preventDefault();
     // event.stopPropagation();
-
-    
-    //checking the value of the status field
-    //console.log(`here is the value status: ${valueStatus}` );
 
     //validate Task Name field
     if(taskName.value.trim().length<=5){
@@ -117,18 +109,12 @@ function validFormFieldInput(event){
         //Clear all fields after saving those data
         clearTaskForm();  
         taskManager.render();
-
+        taskManager.setColor(); 
     }
     else{
         numValidFields=0;
         return;
-    }
-    //clear all fields
-    
-
-
-
-
+    } 
 
 } // end of validFormFieldInput function
 
@@ -137,6 +123,24 @@ save.addEventListener("click",validFormFieldInput);
 
 // add event to clear all field once the closeX button is clicked.
 closeX.addEventListener("click",clearTaskForm);
+
+//Disable past date
+let dateTime = new Date();
+let day = dateTime.getDate();
+let month = dateTime.getMonth() + 1;
+let year = dateTime.getUTCFullYear();
+
+if (day <10){
+    day = "0" + day;
+}
+if (month <10){
+    month = "0" + month;
+}
+minDate = year + "-" + month + "-" + day;
+console.log(minDate);
+document.querySelector("#dueDate").setAttribute('min',minDate);
+
+
 
 // testing addTask method on the new taskManager
 //taskManager.addTask("Car Services","Bring car to Granville Garage for Servicing","Kash","24/09/21","To Do");
