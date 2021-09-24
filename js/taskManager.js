@@ -1,5 +1,7 @@
 //create a function to tranform raw data into HTML card
+
 function createTaskHtml(name,description,toWhom,fmDate,fmMonth,status){
+    
     const htmlCard = `<div class="col-12 col-md-6 col-lg-4 gy-5">
     <div class="card">
         <div class="card-body">
@@ -11,19 +13,19 @@ function createTaskHtml(name,description,toWhom,fmDate,fmMonth,status){
                 </div>
                 <div class="col-3">
                     <h2 class="float-right">${fmDate}</h2>
-                    <span>${fmMonth}</span>
+                    <span id="month">${fmMonth}</span>
                 </div>
             </div>
           <hr>
           <div class="row last-row gx-2">
             <div class="col-3">
-              <p id="assignedTo">Assigned to<br />${toWhom}</p>
-            </div>
-            <div class="col-3 statusColor">
-                <p>Status<br />${status}</p>
+              <p id="assignedTo"><strong>Assigned to</strong><br /><em>${toWhom}</em></p>
             </div>
             <div class="col-3">
-                <a href="#" class="btn btn-primary btn-sm" id="edit">Edit</a>
+                <p id="statusLayout" class=${status}><strong>Status</strong><br /><em>${status}</em></p>
+            </div>
+            <div class="col-3" >
+                <a href="#" class="btn btn-primary btn-sm px-3" id="edit" >Edit</a>
             </div>
             <div class="col-3">
                 <a href="#" class="btn btn-secondary btn-sm">Delete</a>
@@ -70,7 +72,6 @@ class TaskManager{
             //const formattedDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();''
             const formattedDate = date.getDate();
             const formattedMonth = date.toLocaleString('en-us', { month: 'short' });
-
             //Create the task html
             let taskHtml = createTaskHtml(
                 element.name,
@@ -88,9 +89,38 @@ class TaskManager{
         
         let cardLayout = document.querySelector("#cardLayout")
         let joinedHtmlTasks =  tasksHtmlList.join("\n");
-        cardLayout.innerHTML = joinedHtmlTasks; 
+        cardLayout.innerHTML = joinedHtmlTasks;
+
+        // // setColor
+        // let statusArray = document.querySelector(".status");
+        // console.log(statusArray);
+        // foreach
+         
 
     }//end of render method
 
+     setColor(){
+         let review=document.getElementsByClassName("review");
+         for (let i=0;i<review.length;i++){
+             review[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFFFEF";
+         }
 
+         let done=document.getElementsByClassName("done");
+         for (let i=0;i<done.length;i++){
+              //done[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFE5FF";
+             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFECFF";
+         }
+
+         let inprogress=document.getElementsByClassName("inprogress");
+         for (let i=0;i<inprogress.length;i++){
+             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#BAFFFF";
+         }
+
+         let todo=document.getElementsByClassName("todo");
+         for (let i=0;i<todo.length;i++){
+             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#CCFFE5";
+         }
+
+
+    }//end of setColor function
 }//end of class TaskManager

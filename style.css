@@ -8,6 +8,11 @@ body {
     background-color: rgba(170, 221, 238, 0.5);
 }
 
+header h1{
+    font-family:fantasy;
+   
+}
+
 .modal-content {
     background-color: rgba(170, 221, 238, 0.9);
 }
@@ -29,24 +34,26 @@ button a:hover {
 .last-row p{
     font-size: 0.8rem;
     font-weight: 500;
-    color: blue;
+    color: rgb(2, 2, 36);
 }
 
-.statusColor p{
+#month{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.3rem;
+    
+}
+
+/* .statusColor p{
     /* if the task is Done, color in green */
-    color: green;
+    /* color: green; */
     /* if the task is Review, color in purple */
     /* color: purple; */
     /* if the task is In Progress, color in orange */
     /* color: orange; */
     /* if the task is To Do, color in red */
     /* color: red; */
-}
+/* } */ */
 
-#edit {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
 
 /* form elements */
 
@@ -100,8 +107,10 @@ label {
     }
 }
 
-@media (min-width: 971px) and (max-width: 1195px) {
-    #assignedTo{
-        font-size: 0.7rem;
+@media (min-width: 769px) and (max-width: 1199px) {
+    #assignedTo, #statusLayout{
+        font-size: 0.65rem;
+    
     }
 }
+
