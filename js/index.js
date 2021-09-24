@@ -55,7 +55,7 @@ function validFormFieldInput(event){
     }
 
     // validate description field
-    if(description.value.trim().length<10){
+    if(description.value.trim().length<10 || description.value.trim().length>50 ){
         description.classList.remove('is-valid');
         description.classList.add('is-invalid');}
     else{
@@ -154,12 +154,3 @@ document.querySelector("#dueDate").setAttribute('min',minDate);
 // task 7, step1.4
 //let taskHtml = createTaskHtml("Hello","Hello56667778","kashie","03/10/2021","In Progress");
 //console.log(taskHtml);
-
-
-
-
-
-
-
-
-
