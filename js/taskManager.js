@@ -1,8 +1,8 @@
 //create a function to tranform raw data into HTML card
 
-function createTaskHtml(name,description,toWhom,fmDate,fmMonth,status){
+function createTaskHtml(id,name,description,toWhom,fmDate,fmMonth,status){
     
-    const htmlCard = `<div class="col-12 col-md-6 col-lg-4 gy-5">
+    const htmlCard = `<div class="col-12 col-md-6 col-lg-4 gy-5 cardLayout" id="${id}">
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -76,6 +76,7 @@ class TaskManager{
             const formattedMonth = date.toLocaleString('en-us', { month: 'short' });
             //Create the task html
             let taskHtml = createTaskHtml(
+                element.id,
                 element.name,
                 element.description,
                 element.assignedTo,
@@ -111,6 +112,7 @@ class TaskManager{
          for (let i=0;i<done.length;i++){
               //done[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFE5FF";
              done[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFECFF";
+
          }
 
          let inprogress=document.getElementsByClassName("inprogress");
@@ -123,6 +125,21 @@ class TaskManager{
              todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#CCFFE5";
          }
 
-
     }//end of setColor function
+
+    getTaskById(searchingMainDivId){
+        let foundTask;
+        this.tasks.forEach(element => {
+        if (element.id === searchingMainDivId)
+        {
+            foundTask = element;
+            console.log("found");                   
+        };
+    })
+        return foundTask;
+    }//end of getTaskById function
+
+    
+
+
 }//end of class TaskManager
