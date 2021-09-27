@@ -147,7 +147,7 @@ cardLayout.addEventListener("click",(event) =>{
     if (event.target.classList.contains("btn-done")){
         // Updating the selected task status
         const searchingMainDiv = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; 
-        event.target.style.visibility = "hidden";
+        
         console.log(event.target.tagName);
         // console.log("above is event.target.tagName");
         
@@ -158,8 +158,6 @@ cardLayout.addEventListener("click",(event) =>{
         searchingTask.status = "done";
         taskManager.render();
         taskManager.setColor(); 
-      
-        
     }
 });
 
