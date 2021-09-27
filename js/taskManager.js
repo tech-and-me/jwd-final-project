@@ -92,13 +92,7 @@ class TaskManager{
         
         let cardLayout = document.querySelector("#cardLayout")
         let joinedHtmlTasks =  tasksHtmlList.join("\n");
-        cardLayout.innerHTML = joinedHtmlTasks;
-
-        // // setColor
-        // let statusArray = document.querySelector(".status");
-        // console.log(statusArray);
-        // foreach
-         
+        cardLayout.innerHTML = joinedHtmlTasks;        
 
     }//end of render method
 
