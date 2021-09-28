@@ -61,7 +61,7 @@ function validFormFieldInput(event){
     }
 
     // validate assigned to field
-    if(assignedTo.value.trim().length<2){
+    if(assignedTo.value.trim().length<2 || assignedTo.value.trim().length>10 ){
         assignedTo.classList.remove('is-valid');
         assignedTo.classList.add('is-invalid');}
     else{
