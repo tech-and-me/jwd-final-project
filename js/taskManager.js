@@ -12,7 +12,7 @@ function createTaskHtml(id,name,description,toWhom,fmDate,fmMonth,status){
                 <div class="col-9">
                     <h1 class="card-title">${name}</h1>
                     <hr>
-                    <p class="card-text">${description}</p>
+                    <p class="card-text" id="descr" style="height:50px;">${description}</p>
                 </div>
                 <div class="col-3">
                     <h2 class="text-center">${fmDate}</h2>
