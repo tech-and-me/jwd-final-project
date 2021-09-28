@@ -49,32 +49,6 @@ button a:hover {
     
 }
 
-/* .statusColor p{
-    /* if the task is Done, color in green */
-    /* color: green; */
-    /* if the task is Review, color in purple */
-    /* color: purple; */
-    /* if the task is In Progress, color in orange */
-    /* color: orange; */
-    /* if the task is To Do, color in red */
-    /* color: red; */
-/* } */ */
-
-
-/* form elements */
-
-/* form {
-    width:50%;
-    padding: 2em;
-    background-color: rgba(179, 236, 240, 0.9);
-    border: 1px solid rgba(146, 146, 146, 0.9);
-    border-radius: 20px;
-    }
-form hr {
-    margin-bottom: 1.5em;
-    border-top: 2px solid #8c8b8b;
-} */
-
 .g-5, .gy-5 {
     --bs-gutter-y: 1.5rem;
 }
@@ -118,3 +92,9 @@ label {
     
     }
 }
+
+
+/* 
+button > * {
+    pointer-events: none !important;
+  } */

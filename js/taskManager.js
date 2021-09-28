@@ -1,6 +1,9 @@
 //create a function to tranform raw data into HTML card
 
 function createTaskHtml(id,name,description,toWhom,fmDate,fmMonth,status){
+    let display;
+    if (status === "done"){
+        display = "none";}
     
     const htmlCard = `<div class="col-12 col-md-6 col-lg-4 gy-5 cardLayout" id="${id}">
     <div class="card">
@@ -14,7 +17,7 @@ function createTaskHtml(id,name,description,toWhom,fmDate,fmMonth,status){
                 <div class="col-3">
                     <h2 class="text-center">${fmDate}</h2>
                     <div class="text-center" id="month">${fmMonth}</div>
-                    <div class="text-center "><a href="#" class="btn btn-danger btn-sm mt-2 btn-done">Done</a></div>
+                    <div class="text-center " style="display:${display}"><a href="#" class="btn btn-danger btn-sm mt-2 btn-done }">Done</a></div>
 
                 </div>
             </div>
@@ -99,24 +102,24 @@ class TaskManager{
      setColor(){
          let review=document.getElementsByClassName("review");
          for (let i=0;i<review.length;i++){
-             review[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFFFEF";
+             review[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffad33";
          }
 
          let done=document.getElementsByClassName("done");
          for (let i=0;i<done.length;i++){
-              //done[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFE5FF";
-             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFECFF";
+             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#66ff33";
 
          }
 
          let inprogress=document.getElementsByClassName("inprogress");
          for (let i=0;i<inprogress.length;i++){
-             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#BAFFFF";
+             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffff33";
          }
 
          let todo=document.getElementsByClassName("todo");
          for (let i=0;i<todo.length;i++){
-             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#CCFFE5";
+             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#ff9999";
+             
          }
 
     }//end of setColor function

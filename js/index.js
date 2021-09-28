@@ -29,10 +29,6 @@ function clearTaskForm(){
         dueDate.classList.remove("is-invalid");
 }
 
-
-
-
-
 //create function to valid all input of the add Task form
 function validFormFieldInput(event){
     //creating a variable to count the valid field
@@ -42,7 +38,7 @@ function validFormFieldInput(event){
 
     //stopping the form from submitting when submit button is clicked
     event.preventDefault();
-    // event.stopPropagation();
+    event.stopPropagation();
 
     //validate Task Name field
     if(taskName.value.trim().length<5){
@@ -141,16 +137,18 @@ console.log(minDate);
 document.querySelector("#dueDate").setAttribute('min',minDate);
 
 let cardLayout = document.querySelector("#cardLayout")
-console.log("-------card layout selected by class");
+console.log("-------card layout");
 console.log(cardLayout);
+console.log("---------------")
 cardLayout.addEventListener("click",(event) =>{
     if (event.target.classList.contains("btn-done")){
         // Updating the selected task status
         const searchingMainDiv = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; 
-        
         console.log(event.target.tagName);
-        // console.log("above is event.target.tagName");
-        
+        console.log("above is event.target.tagName");
+        console.log("below is event.target")
+        console.log(event.target)
+        console.log("------------------")
         console.log(searchingMainDiv);
         var searchingMainDivId = Number(searchingMainDiv.id);
         let searchingTask;
@@ -158,6 +156,12 @@ cardLayout.addEventListener("click",(event) =>{
         searchingTask.status = "done";
         taskManager.render();
         taskManager.setColor(); 
+        console.log(event.target.parentElement);
+        console.log(event.target);
+        //event.target.parentElement.style.display = "none"; //why this code is not working ??
+        //event.target.style.display = 'none'; //why this code is not working ??
+        
+
     }
 });
 
