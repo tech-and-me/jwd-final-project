@@ -27,7 +27,6 @@ header h1{
 }
 
 
-
 button a {
     color: white;
     text-decoration: none;
@@ -73,6 +72,9 @@ label {
     font-weight: bold;
 }
 
+
+
+
 /* media query */
 @media (min-width: 576px) {
     .modal-dialog {
@@ -94,7 +96,3 @@ label {
 }
 
 
-/* 
-button > * {
-    pointer-events: none !important;
-  } */
