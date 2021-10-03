@@ -1,5 +1,9 @@
 //innitialize the new task manager
 const taskManager = new TaskManager();
+taskManager.load();
+taskManager.render();
+taskManager.setColor();
+
 
 //select all fields of the add task form
 let taskName = document.querySelector("#taskName");
@@ -106,6 +110,7 @@ function validFormFieldInput(event){
         clearTaskForm();  
         taskManager.render();
         taskManager.setColor(); 
+        taskManager.save();
     }
     else{
         numValidFields=0;
@@ -136,32 +141,42 @@ minDate = year + "-" + month + "-" + day;
 console.log(minDate);
 document.querySelector("#dueDate").setAttribute('min',minDate);
 
+//Updating the status to done when DONE button clicked
+    // selecting all cards
 let cardLayout = document.querySelector("#cardLayout")
 console.log("-------card layout");
 console.log(cardLayout);
 console.log("---------------")
+     // add event listener to all cards
 cardLayout.addEventListener("click",(event) =>{
+    // checking if the event.target contain class btn-done
     if (event.target.classList.contains("btn-done")){
-        // Updating the selected task status
+        // if it contain the class btn-done, then, select that one card ( reverse dom to find the main div of the DONE button)
         const searchingMainDiv = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement; 
-        console.log(event.target.tagName);
-        console.log("above is event.target.tagName");
-        console.log("below is event.target")
-        console.log(event.target)
-        console.log("------------------")
-        console.log(searchingMainDiv);
+        // console.log(event.target.tagName);
+        // console.log("above is event.target.tagName");
+        // console.log("below is event.target")
+        // console.log(event.target)
+        // console.log("------------------")
+        // console.log(searchingMainDiv);
         var searchingMainDivId = Number(searchingMainDiv.id);
         let searchingTask;
         searchingTask=taskManager.getTaskById(searchingMainDivId);
         searchingTask.status = "done";
         taskManager.render();
         taskManager.setColor(); 
-        console.log(event.target.parentElement);
-        console.log(event.target);
-        //event.target.parentElement.style.display = "none"; //why this code is not working ??
-        //event.target.style.display = 'none'; //why this code is not working ??
+        taskManager.save();
         
-
+    }
+    else if (event.target.classList.contains("btn-del")){
+        const searchingMainDiv = event.target.parentElement.parentElement.parentElement.parentElement.parentElement;
+        var searchingMainDivId = Number(searchingMainDiv.id);
+        // let searchingTask;
+        // searchingTask=taskManager.getTaskById(searchingMainDivId);
+        taskManager.delete(searchingMainDivId);
+        taskManager.render();
+        taskManager.setColor();
+        taskManager.save();
     }
 });
 

@@ -17,7 +17,7 @@ function createTaskHtml(id,name,description,toWhom,fmDate,fmMonth,status){
                 <div class="col-3">
                     <h2 class="text-center">${fmDate}</h2>
                     <div class="text-center" id="month">${fmMonth}</div>
-                    <div class="text-center " style="display:${display}"><a href="#" class="btn btn-danger btn-sm mt-2 btn-done }">Done</a></div>
+                    <div class="text-center " style="display:${display}"><a href="#" class="btn btn-success btn-sm mt-2 btn-done }">Done</a></div>
 
                 </div>
             </div>
@@ -30,10 +30,10 @@ function createTaskHtml(id,name,description,toWhom,fmDate,fmMonth,status){
                 <p id="statusLayout" class=${status}><strong>Status</strong><br /><em>${status}</em></p>
             </div>
             <div class="col-3" >
-                <a href="#" class="btn btn-primary btn-sm px-3" id="edit" >Edit</a>
+                <a href="#" class="btn btn-primary btn-sm px-3 btn-edit" id="edit" >Edit</a>
             </div>
             <div class="col-3">
-                <a href="#" class="btn btn-secondary btn-sm">Delete</a>
+                <a href="#" class="btn btn-danger btn-sm btn-del">Delete</a>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ class TaskManager{
 
          let done=document.getElementsByClassName("done");
          for (let i=0;i<done.length;i++){
-             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#66ff33";
+             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#c4ff4d";
 
          }
 
@@ -118,12 +118,13 @@ class TaskManager{
 
          let todo=document.getElementsByClassName("todo");
          for (let i=0;i<todo.length;i++){
-             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#ff9999";
+             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#ff8566";
              
          }
 
     }//end of setColor function
 
+    //create metho to search for the Id of the selected card
     getTaskById(searchingMainDivId){
         let foundTask;
         this.tasks.forEach(element => {
@@ -136,7 +137,43 @@ class TaskManager{
         return foundTask;
     }//end of getTaskById function
 
+    // create save method
+    save(){
+        const tasksJson = JSON.stringify(this.tasks);
+        localStorage.setItem("tasks",tasksJson);
+        const currentID = String(this.currentID);
+        localStorage.setItem("currentID",currentID);
+    } // end of save method
+
+
+    //create delete task method
+    delete(taskId){
+        const newTasks = [];
+        this.tasks.forEach(element => {
+            if (element.id !== taskId){
+                newTasks.push(element);
+            }
+        });
+        this.tasks = newTasks;
+
+    }
+
+
+    load(){
+        if (localStorage.getItem("tasks")){
+            const tasksJson= localStorage.getItem("tasks");
+            this.tasks = JSON.parse(tasksJson);
+        }
+
+        if (localStorage.getItem("currentID")){
+            const idJson= localStorage.getItem("currentID");
+            this.currentID = Number(idJson);
+        }
+        
+
+    }
     
+
 
 
 }//end of class TaskManager
