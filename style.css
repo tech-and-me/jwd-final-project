@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgba(170, 221, 238, 0.5);
+    background-color: rgba(150, 222, 247, 0.904);
 }
 
 header h1{
@@ -22,11 +22,6 @@ header h1{
     padding-bottom: 3em;
 }
 
-.btn-done{
-    font-size: 0.6rem !important;
-}
-
-
 button a {
     color: white;
     text-decoration: none;
@@ -34,6 +29,7 @@ button a {
 
 button a:hover {
     color: white;
+
 }
 
 .last-row p{
@@ -66,6 +62,31 @@ h1.card-title {
     font-size: 1.75rem;
     color:orangered;
 }
+
+.btn-done{
+    background-color:rgb(28, 240, 28);
+    border: none;
+    color: black;
+    font-weight:600;
+    box-shadow: 4px 2px 35px 1px #7eac85;
+    font-size: 0.6rem !important;
+}
+
+.btn-del:hover{
+    background-color: #ad380d;
+    box-shadow: 4px 2px 25px 1px #7eac85;
+}
+
+.btn-edit:hover{
+    background-color: #0d18ad;
+    box-shadow: 4px 2px 25px 1px #7eac85;
+}
+
+#addTask:hover{
+    background-color: #0d18ad !important;
+    box-shadow: 4px 2px 25px 1px #7eac85 !important;
+}
+
 
 label {
     font-size: 1rem;
