@@ -107,13 +107,13 @@ class TaskManager{
 
          let done=document.getElementsByClassName("done");
          for (let i=0;i<done.length;i++){
-             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#c4ff4d";
+             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#5BFE5F";
 
          }
 
          let inprogress=document.getElementsByClassName("inprogress");
          for (let i=0;i<inprogress.length;i++){
-             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffff33";
+             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFFF37";
          }
 
          let todo=document.getElementsByClassName("todo");
