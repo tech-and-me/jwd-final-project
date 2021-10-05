@@ -57,13 +57,14 @@ button a:hover {
     text-align: center;
     justify-content: center;
     font-size: 0.6rem;
-    box-shadow: 4px 2px 35px 1px #7eac85;
-    float: right;
-    margin:5px;
+    box-shadow: 8px 5px 10px 3px #7eac85;
+    position: fixed;
+    bottom: 3px;
+    right: 3px;
+    
 }
 
 #back:hover{
-    
     background-color:#030f22;
 
 }
@@ -116,8 +117,6 @@ label {
     font-size: 1rem;
     font-weight: bold;
 }
-
-
 
 
 /* media query */
