@@ -59,13 +59,29 @@ button a:hover {
     font-size: 0.6rem;
     box-shadow: 8px 5px 10px 3px #7eac85;
     position: fixed;
-    bottom: 3px;
-    right: 3px;
-    
+    bottom: 5px;
+    right: 5px;
+    animation: glowing 1500ms infinite;
+    transition: transform .5s ease;
 }
-
+  
+  @keyframes glowing {
+    0% {
+      background-color: #3b0aad;
+      box-shadow: 0 0 5px #eec5f0;
+    }
+    50% {
+      background-color: #0c090a;
+      box-shadow: 0 0 20px #857d81;
+    }
+    100% {
+      background-color: #500c9e;
+      box-shadow: 0 0 5px #d78eee;
+    }
+  }
+ 
 #back:hover{
-    background-color:#030f22;
+    transform: scale(1.2);
 
 }
 
