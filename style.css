@@ -44,6 +44,30 @@ button a:hover {
     
 }
 
+#edit{
+    display: none;
+}
+
+#back{
+    background-color:darkblue;
+    text-decoration: none;
+    padding:9px;
+    color:white;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    box-shadow: 4px 2px 35px 1px #7eac85;
+    float: right;
+    margin:5px;
+}
+
+#back:hover{
+    
+    background-color:#030f22;
+
+}
+
 .g-5, .gy-5 {
     --bs-gutter-y: 1.5rem;
 }
