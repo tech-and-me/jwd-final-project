@@ -34,7 +34,7 @@ Task Planner App is built with all required coding skillsets - HTML5, CSS/CSS3, 
 
 ### Example Screenshot
 
-<img src="./img/Screen Shot 2021-10-12 at 23.40.24.png" width="50%">
+<img src="./img/Screen Shot 2021-10-13 at 12.21.56.png" width="50%">
 
 [Try it here] (https://annie-ha.github.io/jwd-final-project/)
 
