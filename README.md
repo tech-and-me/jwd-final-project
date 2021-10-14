@@ -30,7 +30,7 @@ Task Planner has the following functionalities:
 
 ### The Technologies
 
-Task Planner App is built with all required coding skillsets - HTML5, CSS/CSS3, and JavaScript. Bootstrap v.5 framework and components are used in this project.
+Task Planner App is built with all required coding skillsets - HTML5, CSS/CSS3, JavaScript, JSON Local Storage. Bootstrap v.5 framework and components are used in this project.
 
 ### Example Screenshot
 
