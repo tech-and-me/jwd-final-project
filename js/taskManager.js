@@ -158,7 +158,6 @@ class TaskManager{
 
     }
 
-
     load(){
         if (localStorage.getItem("tasks")){
             const tasksJson= localStorage.getItem("tasks");
