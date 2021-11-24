@@ -102,23 +102,23 @@ class TaskManager{
      setColor(){
          let review=document.getElementsByClassName("review");
          for (let i=0;i<review.length;i++){
-             review[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffad33";
+             review[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffe6cc";
          }
 
          let done=document.getElementsByClassName("done");
          for (let i=0;i<done.length;i++){
-             done[i].parentNode.parentNode.parentNode.style.backgroundColor="#5BFE5F";
+             done[i].parentNode.parentNode.parentNode.style.backgroundColor= "#e6ffe6";
 
          }
 
          let inprogress=document.getElementsByClassName("inprogress");
          for (let i=0;i<inprogress.length;i++){
-             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#FFFF37";
+             inprogress[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffffb3";
          }
 
          let todo=document.getElementsByClassName("todo");
          for (let i=0;i<todo.length;i++){
-             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#ff8566";
+             todo[i].parentNode.parentNode.parentNode.style.backgroundColor="#ffb3b3";
              
          }
 

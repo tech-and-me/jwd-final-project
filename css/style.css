@@ -5,10 +5,11 @@
 }
 
 body {
-    background-image: url("../img/iphone-g_1920.jpg");
+    background-image: url("../img/bgLight2.jfif");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 header h1{
@@ -25,6 +26,8 @@ header h1{
     padding-top: 1em;
     padding-bottom: 3em;
 }
+
+
 
 button a {
     color: white;
@@ -125,6 +128,13 @@ h1.card-title {
     box-shadow: 4px 2px 25px 1px #7eac85;
 }
 
+#addTask{
+    font-size: 1rem;
+    width: 60px!important;
+    text-align: center;
+    padding:3px;
+}
+
 #addTask:hover{
     background-color: #0d18ad !important;
     box-shadow: 4px 2px 25px 1px #7eac85 !important;
@@ -140,12 +150,21 @@ label {
     .modal-dialog {
         max-width: 570px;
     }
+    
 }
 
 @media (max-width:767px) {
     form textarea {
         margin-bottom: 1.5em;
     }
+
+    #addTask{
+        font-size: 0.7rem;
+        width: 40px!important;
+        text-align: center;
+        padding:3px;
+    }
+
 }
 
 @media (min-width: 769px) and (max-width: 1199px) {
